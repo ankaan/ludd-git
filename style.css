@@ -29,3 +29,61 @@ h1, h2, h3 {
 	bottom: 5%;
 }
 
+/* My own custom */
+.left-column {
+    width: 47%;
+    float: left;
+    clear: both;
+}
+
+.right-column {
+    width: 47%;
+    float: right;
+}
+
+.footnote {
+    font-size: 0.8em;
+}
+
+h3 {
+    color: #4444aa
+}
+
+table {
+    margin-top: 1em;
+}
+
+th {
+    background-color: #e2e2e2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th, tr {
+    padding: 0.2em;
+    padding-right: 0.5em;
+    text-align: left;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+a, a > code {
+	color: rgb(249, 38, 38);
+}
+
+.remark-inline-code {
+    background-color: #DDDDDD;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    border-radius: 0.25em;
+}
+
+code {
+    border-radius: 0.5em;
+}
