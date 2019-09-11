@@ -8,7 +8,7 @@ Anders Engström
 
 12 September 2019
 
-.left-column[![Ludd](ludd.png)]
+.left-column[![:imgscale 40%](ludd.png)]
 .right-column[![Ludd](git.png)]
 
 ---
