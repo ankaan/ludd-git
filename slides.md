@@ -311,4 +311,4 @@ More information:
 * http://en.wikipedia.org/wiki/Git
 
 These slides:
-* https://ankaan.github.io/ludd-git-2019/
+* https://ankaan.github.io/ludd-git/
