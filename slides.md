@@ -6,7 +6,7 @@ Anders Engström
 
 <ankan@ludd.ltu.se>
 
-12 September 2019
+27 February 2020
 
 .left-column[![:imgscale 40%](ludd.png)]
 .right-column[![Ludd](git.png)]
@@ -16,7 +16,7 @@ Anders Engström
 ### How do you work in a group?
 
 * Shared folder. (In cloud or on mainframe.)
-* Mail files back and fourth. (All filer or only changed ones?)
+* Mail files back and fourth. (All files or only changed ones?)
 * Instant messaging.
 
 ### How do you undo changes?
@@ -118,12 +118,47 @@ help    | Show the help for a certain command.
 ![:imgscale 50%](gitstorage.png)
 
 ---
-## Demonstration of the basic concepts.
+## Demonstration of the basic concepts
 
 * Change files.
 * Commit.
 * Handle conflicts.
 * Look in the log.
+
+### A closer look at the history
+
+Different ways of looking at the history:
+
+Command | Description
+--------|------------
+log     | Show a log of all commits with their comments.
+show    | Show details for a specific commit.
+diff    | Compare different versions of files.
+blame   | Show who last touched a certain row.
+
+---
+## Undo
+
+Undo can mean a lot of different things:
+
+```bash
+# While still coding
+git checkout $file
+git checkout 502cfb1 $file
+
+# Prepared for a commit, but not yet committed:
+git reset HEAD $file
+
+# Already commited, but not pushed:
+git reset --soft HEAD~1
+
+# Already pushed
+git revert 502fcb1
+```
+
+But in general: Leave your published errors in the history!
+
+But remember, the data is still there!
 
 ---
 ## Tags
@@ -219,49 +254,13 @@ D---E---F---G master
 ---
 ## Force push
 
-Sometimes you just have to do replace what is on the server.
+Sometimes you just have to replace what is on the server.
 
 ```bash
 git push --force-with-lease
 ```
 
 (Basically never use `git push --force`)
-
----
-## Undo
-
-Undo can mean a lot of different things:
-
-```bash
-# While still coding
-git checkout $file
-git checkout 502cfb1 $file
-
-# Prepared for a commit, but not yet committed:
-git reset HEAD $file
-
-# Already commited, but not pushed:
-git reset --soft HEAD~1
-
-# Already pushed
-git revert 502fcb1
-```
-
-But in general: Leave your published errors in the history!
-
-But remember, the data is still there!
-
----
-## A closer look at the history
-
-Different ways of looking at the history:
-
-Command | Description
---------|------------
-log     | Show a log of all commits with their comments.
-show    | Show details for a specific commit.
-diff    | Compare different versions of files.
-blame   | Show who last touched a certain row.
 
 ---
 ## Ignore files
