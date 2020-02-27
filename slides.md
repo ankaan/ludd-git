@@ -21,9 +21,9 @@ Anders Engström
 
 ### How do you undo changes?
 
-* Rewrite parts of the code so that it looks the same as before.
 * Create a copy in advance according to a naming convention.
-* Search through old mails.
+* Search through old mails or IM conversations.
+* Rewrite parts of the code so that it looks the same as before.
 
 ### Can you come up with more ways?
 
@@ -63,7 +63,7 @@ Anders Engström
 
 ```bash
 git config --global user.name "Anders Engström"
-git config --global user.name ankan@ludd.ltu.se
+git config --global user.email ankan@ludd.ltu.se
 ```
 
 ### Create a common storage area
