@@ -6,7 +6,7 @@ Anders Engström
 
 <ankan@ludd.ltu.se>
 
-27 February 2020
+17 September 2020
 
 .left-column[![:imgscale 40%](ludd.png)]
 .right-column[![Ludd](git.png)]
@@ -46,6 +46,7 @@ Anders Engström
 ### Git is:
 
 * A fast distributed version control system.
+* Based on merging changes.
 * Written for the Linux kernel (by Linus Torvalds et al.)
 * Lots of other projects also use it.
 * Git is open source, GPL etc.
@@ -118,6 +119,17 @@ help    | Show the help for a certain command.
 ![:imgscale 50%](gitstorage.png)
 
 ---
+## How is committed data stored in git?
+
+At a high level, each saved state is a commit, which contains:
+
+* A commit message.
+* An author
+* Its predecessor state
+
+Each commit is identified by a hash.
+
+---
 ## Demonstration of the basic concepts
 
 * Change files.
@@ -154,11 +166,15 @@ git reset --soft HEAD~1
 
 # Already pushed
 git revert 502fcb1
+
+# Help, my stuff is gone!
+git reflog
+git reset --hard 502fcb1
 ```
 
 But in general: Leave your published errors in the history!
 
-But remember, the data is still there!
+Though remember, the data is still there!
 
 ---
 ## Tags
@@ -190,7 +206,7 @@ git push --tags
 Command | Description
 --------|------------
 branch  | Lists or create a new branch (`-r` to list remote branches)
-checkout | Is used to switch between branches (`-b $name` to create.)
+checkout | Switch between branches (`-b $name` to create.)
 merge   | Bring in changes from another branch.
 rebase  | Pretend that we made our changes to a different branch.
 
