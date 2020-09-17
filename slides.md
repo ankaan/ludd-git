@@ -56,6 +56,11 @@ Anders Engström
 
 * Official command-line client. (Also available for Windows.)
     * The graphical clients mostly just gives you a fancy menu.
+    * All the same concepts still apply.
+* Github Website
+* Some side tools that I personally use:
+    * neovim/fugitive/nerdtree
+    * meld
 
 ---
 ## Preparations
@@ -148,6 +153,14 @@ show    | Show details for a specific commit.
 diff    | Compare different versions of files.
 blame   | Show who last touched a certain row.
 
+???
+* Transfer data between users.
+* Automatically merge nonconflicting changes.
+* Create a conflict and resolve it.
+* Git log
+* Git show
+* Git diff
+* Git blame
 ---
 ## Undo
 
@@ -306,6 +319,8 @@ For example:
 * What git is.
 * How to use git.
 * Some of the most common problems you can encounter.
+
+With all the data stored, there are lots of more things you can do.
 
 ---
 ## Bibliography and links
