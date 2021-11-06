@@ -6,7 +6,7 @@ Anders Engström
 
 <ankan@ludd.ltu.se>
 
-17 September 2020
+9 November 2021
 
 .left-column[![:imgscale 40%](ludd.png)]
 .right-column[![Ludd](git.png)]
@@ -45,7 +45,7 @@ Anders Engström
 
 ### Git is:
 
-* A fast distributed version control system.
+* A fast distributed version control system. (Free backups!)
 * Based on merging changes.
 * Written for the Linux kernel (by Linus Torvalds et al.)
 * Lots of other projects also use it.
@@ -131,6 +131,7 @@ At a high level, each saved state is a commit, which contains:
 * A commit message.
 * An author
 * Its predecessor state
+* Your updated files.
 
 Each commit is identified by a hash.
 
@@ -171,13 +172,13 @@ Undo can mean a lot of different things:
 git checkout $file
 git checkout 502cfb1 $file
 
-# Prepared for a commit, but not yet committed:
+# Prepared for a commit, but not yet committed (keep the change itself):
 git reset HEAD $file
 
-# Already commited, but not pushed:
+# Already commited, but not pushed (leave change staged):
 git reset --soft HEAD~1
 
-# Already pushed
+# Already pushed (create a commit that does reverts all changes):
 git revert 502fcb1
 
 # Help, my stuff is gone!
@@ -188,6 +189,14 @@ git reset --hard 502fcb1
 But in general: Leave your published errors in the history!
 
 Though remember, the data is still there!
+
+---
+## More control while adding
+
+```bash
+# To review all changes while you are preparing a commit:
+git add -p
+```
 
 ---
 ## Tags
@@ -227,10 +236,12 @@ rebase  | Pretend that we made our changes to a different branch.
 
 ```bash
 # Upload and follow:
-git push -u origin $branch
+git push --set-upstream origin $branch
 
-# Follow a remote branch:
-git branch $local_branch $remote_branch
+# To follow a remote branch, first update the cache of what is on the server:
+git pull
+# Then create a local branch based on that cache:
+git checkout $branch
 ```
 
 ---
@@ -305,11 +316,18 @@ For example:
 ```
 
 ---
+## Pull Requests / Merge Requests
+Server side workflow to help with:
+* Code reviews.
+* Verify code before it is merged.
+
+---
 ## What if I use Windows?
 
 * msysgit (installs a shell and works just like on Linux.)
+* There is also WSL now.
 * Git Extensions (a GUI-application.)
-* Built into your IDE (Eclipse, IntelliJ Idea, PyCharm, etc.)
+* Built into your IDE (VSCode, Eclipse, IntelliJ Idea, PyCharm, etc.)
 * There are GUI programs for other operating systems also.
 
 ---
@@ -325,10 +343,10 @@ With all the data stored, there are lots of more things you can do.
 ---
 ## Bibliography and links
 
+.right-side[![:imgscale 75%](qr.png)]
 
-Guides:
-* http://schacon.github.com/git/gittutorial.html
-* .strike[http://ricroberts.com/articles/getting-to-grips-with-git-part-1-the-basics]
+These slides:
+* https://ankaan.github.io/ludd-git/
 
 Online hosting:
 * http://buck.ludd.ltu.se
@@ -336,9 +354,10 @@ Online hosting:
 * http://github.com
 * http://bitbucket.org
 
+Guides:
+* http://schacon.github.com/git/gittutorial.html
+* .strike[http://ricroberts.com/articles/getting-to-grips-with-git-part-1-the-basics]
+
 More information:
 * http://en.wikipedia.org/wiki/Revision_control
 * http://en.wikipedia.org/wiki/Git
-
-These slides:
-* https://ankaan.github.io/ludd-git/

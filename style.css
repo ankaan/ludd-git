@@ -87,3 +87,7 @@ a, a > code {
 code {
     border-radius: 0.5em;
 }
+
+.right-side {
+    float: right;
+}
