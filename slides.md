@@ -18,12 +18,15 @@ Anders Engström
 * Shared folder. (In cloud or on mainframe.)
 * Mail files back and fourth. (All files or only changed ones?)
 * Instant messaging.
+* Only work on files that you own, or others know that you are working on. Then transfer files to a common location.
 
 ### How do you undo changes?
 
 * Create a copy in advance according to a naming convention.
 * Search through old mails or IM conversations.
 * Rewrite parts of the code so that it looks the same as before.
+* Some cloud storage sites have a history feature.
+* Undo in your editor.
 
 ### Can you come up with more ways?
 
@@ -32,13 +35,13 @@ Anders Engström
 
 ### How do you handle multiple users?
 
-* File locks
-* Merge
+* The preemptive way: **File locks**
+* The procrastinatory way: **Merge**
 
 ### Where is the information stored?
 
-* Centralized
-* Distributed
+* **Centralized**
+* **Distributed**
 
 ---
 ## This is Git
@@ -155,6 +158,7 @@ diff    | Compare different versions of files.
 blame   | Show who last touched a certain row.
 
 ???
+* Create repo in github
 * Transfer data between users.
 * Automatically merge nonconflicting changes.
 * Create a conflict and resolve it.
@@ -162,6 +166,7 @@ blame   | Show who last touched a certain row.
 * Git show
 * Git diff
 * Git blame
+* Display history in github
 ---
 ## Undo
 
@@ -173,7 +178,7 @@ git checkout $file
 git checkout 502cfb1 $file
 
 # Prepared for a commit, but not yet committed (keep the change itself):
-git reset HEAD $file
+git reset $file
 
 # Already commited, but not pushed (leave change staged):
 git reset --soft HEAD~1
@@ -301,6 +306,8 @@ git push --force-with-lease
 ```
 
 (Basically never use `git push --force`)
+
+With great power comes great responsibility!
 
 ---
 ## Ignore files
