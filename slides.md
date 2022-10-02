@@ -6,7 +6,7 @@ Anders Engström
 
 <ankan@ludd.ltu.se>
 
-9 November 2021
+6 October 2022
 
 .left-column[![:imgscale 40%](ludd.png)]
 .right-column[![Ludd](git.png)]
