@@ -62,8 +62,9 @@ Anders Engström
     * All the same concepts still apply.
 * Github Website
 * Some side tools that I personally use:
-    * neovim/fugitive/nerdtree
-    * meld
+    * Git intregration in VSCode
+    * Gitlens
+    * tig
 
 ---
 ## Preparations
@@ -177,10 +178,10 @@ Undo can mean a lot of different things:
 git checkout $file
 git checkout 502cfb1 $file
 
-# Prepared for a commit, but not yet committed (keep the change itself):
+# Added, but not yet committed. Undo add (keep the change itself):
 git reset $file
 
-# Already commited, but not pushed (leave change staged):
+# Already commited, but not yet pushed. Undo commit (leave change staged):
 git reset --soft HEAD~1
 
 # Already pushed (create a commit that does reverts all changes):
@@ -270,6 +271,34 @@ And the result will be:
       A---B---C topic
      /         \
 D---E---F---G---H master (current)
+```
+
+---
+## Fast-forward merge
+
+### An example of what a fast-forward merge does
+
+```
+      A---B---C topic
+     /
+D---E master (current)
+```
+
+Then perform the merge:
+```bash
+git merge --ff-only topic
+```
+
+And the result will be:
+```
+      A---B---C topic master (current)
+     /
+D---E
+```
+
+Or just:
+```
+D---E---A---B---C topic master (current)
 ```
 
 ---
